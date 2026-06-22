@@ -1,0 +1,4 @@
+{
+    "source_file": "raw_sales.csv",
+    "destination_file": "clean_sales.csv"
+}
