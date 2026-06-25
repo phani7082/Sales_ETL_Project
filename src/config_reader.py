@@ -1,28 +1,12 @@
 import json
 
-with open(
-    "config/config.json",
-    "r"
-) as file:
+def load_config():
 
-    config = json.load(file)
+    with open(
+        "config/config.json",
+        "r"
+    ) as file:
 
-print(config)
+        config = json.load(file)
 
-
-
-
-
-config["source_file"]
-
-source=config["source_file"]
-print(source)
-
-
-
-config["destination_file"]
-
-dest=config["destination_file"]
-print(dest)
-
-
+    return config
