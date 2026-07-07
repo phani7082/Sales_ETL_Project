@@ -1,8 +1,12 @@
 import pandas as pd
 
-from logger import log_info
+from .logger import log_info
+
 
 def extract_data(file_path):
+    """
+    Reads the source CSV file and returns a Pandas DataFrame.
+    """
 
     log_info("Extract Stage Started")
 
@@ -11,7 +15,3 @@ def extract_data(file_path):
     log_info("Data Extracted Successfully")
 
     return df
-
-data = extract_data("data/raw_sales.csv")
-
-print(data)

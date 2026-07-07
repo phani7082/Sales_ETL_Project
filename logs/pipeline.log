@@ -3,3 +3,79 @@
 2026-06-20 20:35:14,616 INFO Pipeline Started
 2026-06-22 20:17:26,384 INFO Pipeline Started
 2026-06-22 20:22:39,479 INFO Pipeline Started
+2026-07-06 19:48:43,428 - INFO - Extract Stage Started
+2026-07-06 19:49:53,223 - INFO - Extract Stage Started
+2026-07-07 19:24:26,921 - INFO - Extract Stage Started
+2026-07-07 19:24:28,169 - INFO - Extract Stage Started
+2026-07-07 19:24:29,214 - INFO - Extract Stage Started
+2026-07-07 19:40:20,298 - INFO - Extract Stage Started
+2026-07-07 19:42:29,793 - INFO - Extract Stage Started
+2026-07-07 19:43:32,400 - INFO - Extract Stage Started
+2026-07-07 19:45:01,619 - INFO - Extract Stage Started
+2026-07-07 19:47:31,845 - INFO - Extract Stage Started
+2026-07-07 19:47:31,847 - ERROR - [Errno 2] No such file or directory: 'rawsales.csv'
+2026-07-07 19:54:17,612 - INFO - Extract Stage Started
+2026-07-07 19:54:17,613 - ERROR - [Errno 2] No such file or directory: 'rawsales.csv'
+2026-07-07 19:55:02,415 - INFO - Extract Stage Started
+2026-07-07 19:55:02,804 - INFO - Data Extracted Successfully
+2026-07-07 19:55:03,520 - INFO - Extract Stage Started
+2026-07-07 19:55:03,521 - ERROR - [Errno 2] No such file or directory: 'rawsales.csv'
+2026-07-07 19:57:56,012 - INFO - Extract Stage Started
+2026-07-07 19:57:56,014 - ERROR - [Errno 2] No such file or directory: 'rawsales.csv'
+2026-07-07 19:59:44,151 - INFO - Extract Stage Started
+2026-07-07 19:59:44,152 - ERROR - [Errno 2] No such file or directory: 'rawsales.csv'
+2026-07-07 20:15:34,256 INFO Pipeline Started
+2026-07-07 20:15:34,265 INFO Extract Stage Started
+2026-07-07 20:15:34,267 INFO Data Extracted Successfully
+2026-07-07 20:15:34,267 INFO Validation Started
+2026-07-07 20:15:34,345 ERROR Missing Required Column: product
+2026-07-07 20:20:15,170 INFO Pipeline Started
+2026-07-07 20:20:15,170 INFO Extract Stage Started
+2026-07-07 20:20:15,172 INFO Data Extracted Successfully
+2026-07-07 20:20:15,172 INFO Validation Started
+2026-07-07 20:20:15,172 ERROR Missing Required Column: product
+2026-07-07 20:20:39,501 INFO Pipeline Started
+2026-07-07 20:20:39,501 INFO Extract Stage Started
+2026-07-07 20:20:39,504 INFO Data Extracted Successfully
+2026-07-07 20:20:39,504 INFO Validation Started
+2026-07-07 20:20:39,504 ERROR Missing Required Column: product
+2026-07-07 20:22:22,773 INFO Pipeline Started
+2026-07-07 20:22:22,773 INFO Extract Stage Started
+2026-07-07 20:22:22,786 INFO Data Extracted Successfully
+2026-07-07 20:22:22,786 INFO Validation Started
+2026-07-07 20:22:22,786 INFO Column Validation Completed
+2026-07-07 20:22:22,786 INFO Dataset Validation Completed
+2026-07-07 20:22:22,853 INFO Numeric Validation Completed
+2026-07-07 20:22:22,853 INFO Transformation Started
+2026-07-07 20:22:22,995 INFO Duplicate Records Removed
+2026-07-07 20:22:23,013 INFO Missing Values Removed
+2026-07-07 20:22:23,014 INFO Product Names Standardized
+2026-07-07 20:22:23,014 INFO Region Names Standardized
+2026-07-07 20:22:23,014 INFO Negative Sales Converted to Positive
+2026-07-07 20:22:23,014 INFO Total Sales: 95000
+2026-07-07 20:22:23,014 INFO Total Records After Transformation: 3
+2026-07-07 20:22:23,015 INFO Transformation Completed
+2026-07-07 20:22:23,015 INFO load stage started
+2026-07-07 20:22:23,059 INFO output file created
+2026-07-07 20:22:23,059 INFO Pipeline Execution Time: 0.29 seconds
+2026-07-07 20:22:23,059 INFO Pipeline Completed Successfully
+2026-07-07 20:26:11,897 INFO Pipeline Started
+2026-07-07 20:26:11,897 INFO Extract Stage Started
+2026-07-07 20:26:11,986 INFO Data Extracted Successfully
+2026-07-07 20:26:11,986 INFO Validation Started
+2026-07-07 20:26:11,986 INFO Column Validation Completed
+2026-07-07 20:26:11,986 INFO Dataset Validation Completed
+2026-07-07 20:26:11,987 INFO Numeric Validation Completed
+2026-07-07 20:26:11,987 INFO Transformation Started
+2026-07-07 20:26:12,009 INFO Duplicate Records Removed
+2026-07-07 20:26:12,119 INFO Missing Values Removed
+2026-07-07 20:26:12,120 INFO Product Names Standardized
+2026-07-07 20:26:12,121 INFO Region Names Standardized
+2026-07-07 20:26:12,122 INFO Negative Sales Converted to Positive
+2026-07-07 20:26:12,123 INFO Total Sales: 227700.0
+2026-07-07 20:26:12,123 INFO Total Records After Transformation: 9
+2026-07-07 20:26:12,123 INFO Transformation Completed
+2026-07-07 20:26:12,123 INFO load stage started
+2026-07-07 20:26:12,129 INFO output file created
+2026-07-07 20:26:12,129 INFO Pipeline Execution Time: 0.23 seconds
+2026-07-07 20:26:12,130 INFO Pipeline Completed Successfully

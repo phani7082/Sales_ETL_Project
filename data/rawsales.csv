@@ -1,0 +1,11 @@
+product,sales,region
+Laptop,55000,North
+laptop,55000,north
+MOBILE,-32000,SOUTH
+Keyboard,2500,East
+Monitor,18000,West
+Mouse,,South
+SSD,7500,North
+Printer,-12500,Central
+Tablet,42000,east
+Webcam,3200,WEST
