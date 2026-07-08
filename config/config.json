@@ -1,4 +1,4 @@
 {
-    "source_file": "data/rawsales.csv",
-    "destination_file": "data/clean_sales.csv"
+    "source_file": "data/sales_transactions.xlsx",
+    "destination_file": "data/clean_sales.xlsx"
 }

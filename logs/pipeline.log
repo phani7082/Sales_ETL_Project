@@ -79,3 +79,6 @@
 2026-07-07 20:26:12,129 INFO output file created
 2026-07-07 20:26:12,129 INFO Pipeline Execution Time: 0.23 seconds
 2026-07-07 20:26:12,130 INFO Pipeline Completed Successfully
+2026-07-08 19:23:02,522 INFO Pipeline Started
+2026-07-08 19:23:02,530 INFO Extract Stage Started
+2026-07-08 19:23:02,533 ERROR 'utf-8' codec can't decode byte 0xfc in position 10: invalid start byte
