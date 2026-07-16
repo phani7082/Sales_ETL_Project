@@ -1,4 +1,10 @@
 {
-    "source_file": "data/sales_transactions.xlsx",
-    "destination_file": "data/clean_sales.xlsx"
+    "server": "localhost",
+    "database": "SalesDB",
+    "driver": "ODBC Driver 17 for SQL Server",
+    "trusted_connection": "yes",
+
+    "source_table": "raw_sales",
+
+    "destination_table": "clean_sales"
 }
