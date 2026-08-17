@@ -10,36 +10,130 @@ from .logger import log_info, log_error
 
 def run_pipeline():
 
-    try:
+    log_info("========== ETL Pipeline Started ==========")
 
-        log_info("Pipeline Started")
+    config = load_config()
 
-        start_time = time.time()
+    batch_size = config["batch_size"]
+    max_retries = config["max_retries"]
 
-        config = load_config()
+    offset = 0
 
-        source_file = config["source_file"]
-        destination_file = config["destination_file"]
+    total_batches = 0
+    successful_batches = 0
+    failed_batches = 0
+    total_records = 0
 
-        data = extract_data(source_file)
+    fastest_batch = float("inf")
+    slowest_batch = 0
+    total_batch_time = 0
 
-        validate_data(data)
+    start_time = time.time()
 
-        clean_data = transform_data(data)
+    while True:
 
-        status = load_data(clean_data, destination_file)
+        df = extract_data(offset, batch_size)
 
-        end_time = time.time()
+        if df.empty:
+            log_info("No More Records Found")
+            break
 
-        execution_time = end_time - start_time
+        total_batches += 1
+        total_records += len(df)
 
-        log_info(f"Pipeline Execution Time: {execution_time:.2f} seconds")
-        log_info("Pipeline Completed Successfully")
+        retry_count = 0
 
-        print(status)
+        batch_start_time = time.time()
 
-    except Exception as e:
+        while retry_count < max_retries:
 
-        log_error(str(e))
+            try:
 
-        print(e)
+                validated_df = validate_data(df)
+
+                transformed_df = transform_data(validated_df)
+
+                load_data(transformed_df)
+
+                successful_batches += 1
+
+                batch_execution_time = (
+                    time.time() - batch_start_time
+                )
+
+                total_batch_time += batch_execution_time
+
+                fastest_batch = min(
+                    fastest_batch,
+                    batch_execution_time
+                )
+
+                slowest_batch = max(
+                    slowest_batch,
+                    batch_execution_time
+                )
+
+                log_info(
+                    f"Batch {total_batches} Completed Successfully"
+                )
+
+                break
+
+            except Exception as e:
+
+                retry_count += 1
+
+                log_error(
+                    f"Batch {total_batches} Failed "
+                    f"(Retry {retry_count}/{max_retries}) : {e}"
+                )
+
+                if retry_count == max_retries:
+
+                    failed_batches += 1
+
+                    log_error(
+                        f"Skipping Batch {total_batches}"
+                    )
+
+        offset += batch_size
+
+    end_time = time.time()
+
+    execution_time = end_time - start_time
+
+    average_batch_time = (
+        total_batch_time / successful_batches
+        if successful_batches > 0
+        else 0
+    )
+
+    records_per_second = (
+        total_records / execution_time
+        if execution_time > 0
+        else 0
+    )
+
+    batches_per_minute = (
+        total_batches / (execution_time / 60)
+        if execution_time > 0
+        else 0
+    )
+
+    log_info("========== ETL SUMMARY ==========")
+
+    log_info(f"Total Batches : {total_batches}")
+    log_info(f"Successful Batches : {successful_batches}")
+    log_info(f"Failed Batches : {failed_batches}")
+    log_info(f"Total Records : {total_records}")
+
+    log_info(f"Execution Time : {execution_time:.2f} Seconds")
+
+    log_info(f"Fastest Batch : {fastest_batch:.2f} Seconds")
+    log_info(f"Slowest Batch : {slowest_batch:.2f} Seconds")
+    log_info(f"Average Batch : {average_batch_time:.2f} Seconds")
+
+    log_info(f"Records / Second : {records_per_second:.2f}")
+    log_info(f"Batches / Minute : {batches_per_minute:.2f}")
+
+    log_info("========== ETL Pipeline Completed ==========")

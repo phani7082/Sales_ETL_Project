@@ -6,5 +6,11 @@
 
     "source_table": "raw_sales",
 
-    "destination_table": "clean_sales"
+    "region_filter": "South",
+    "category_filter": "Electronics",
+    "minimum_sales": 50000,
+
+    "batch_size": 10000,
+
+    "max_retries": 3
 }
